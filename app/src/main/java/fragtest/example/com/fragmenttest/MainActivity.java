@@ -14,7 +14,7 @@ import android.widget.Button;
  */
 public class MainActivity extends FragmentActivity implements View.OnClickListener{
 
-    Button bt1,bt2;
+    Button bt1,bt2,bt3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,8 +25,11 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
         setContentView(R.layout.add_fragment);
         bt1 = (Button) findViewById(R.id.first);
         bt2 = (Button) findViewById(R.id.second);
+        bt3 = (Button) findViewById(R.id.trans);
         bt1.setOnClickListener(this);
         bt2.setOnClickListener(this);
+        bt3.setOnClickListener(this);
+
     }
 
     @Override
@@ -38,8 +41,11 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
                 break;
             case R.id.second:
                 SecondFragment secondFragment = new SecondFragment();
-                addFragment(secondFragment);
+                addFragment( secondFragment);
                 break;
+            case R.id.trans:
+                ThirdFragment thirdFragment = new ThirdFragment();
+                addFragment(thirdFragment);
         }
     }
 
